@@ -1,5 +1,5 @@
-let circleX = 200;
-let circleY = 200;
+let circleX = 500;
+let circleY = 500;
 
 // PASO 1 ::: DETECTAR EL NAVEGADOR
 const elNavegadorEsCompatible = () => {
@@ -57,12 +57,10 @@ const manejarResultado = (resultado) => {
   }
 };
 function setup() {
-  createCanvas(400, 400);
+  createCanvas(windowWidth, windowHeight);
 }
 function draw() {
   background(220);
-  let display = touches.length + " number touches";
-  text(display, 5, 10);
   ellipse(circleX, circleY, 50, 50);
 }
 
