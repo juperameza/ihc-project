@@ -14,7 +14,6 @@ const elNavegadorEsCompatible = () => {
 };
 // PASO 2 ::: SI EL NAVEGADOR ES COMPATIBLE CONFIGURAR EL RECONOCIMIENTO DE VOZ
 if (elNavegadorEsCompatible()) {
-  console.log("FUniona :D");
   // 2.1 Esta api tiene nombres distintos según el navegador porque aún está en fase experimental, por eso las listamos todas e instanciamos la primera que consiga
   const recognition = new (window.SpeechRecognition ||
     window.webkitSpeechRecognition ||
@@ -65,4 +64,9 @@ function draw() {
   let display = touches.length + " number touches";
   text(display, 5, 10);
   ellipse(circleX, circleY, 50, 50);
+}
+
+function touchMoved(event) {
+  circleX = event.clientX;
+  circleY = event.clientY;
 }
