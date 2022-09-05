@@ -37,9 +37,6 @@ if (elNavegadorEsCompatible()) {
 
 // PASO 3 DEFINIMOS LA FUNCIÓN QUE MANEJARÁ RESULTADO DEL RECONOCIMIENTO DE VOZ
 const manejarResultado = (resultado) => {
-  // 3.1 PINTAMOS LOS RESULTADOS EN EL HTML
-  // *******BONUS*******
-  // Si el resultado es igual a 'abrir wikipedia' abriremos wikipedia
   if (resultado.results[0][0].transcript.toLowerCase().trim() == "derecha") {
     circleX += 20;
   } else if (
@@ -65,6 +62,7 @@ function draw() {
 }
 
 function touchMoved(event) {
-  circleX = event.clientX;
-  circleY = event.clientY;
+  console.log(event);
+  circleX = mouseX;
+  circleY = mouseY;
 }
