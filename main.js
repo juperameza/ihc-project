@@ -38,11 +38,22 @@ if (elNavegadorEsCompatible()) {
 // PASO 3 DEFINIMOS LA FUNCIÓN QUE MANEJARÁ RESULTADO DEL RECONOCIMIENTO DE VOZ
 const manejarResultado = (resultado) => {
   // 3.1 PINTAMOS LOS RESULTADOS EN EL HTML
-  document.body.innerHTML = resultado.results[0][0].transcript;
   // *******BONUS*******
   // Si el resultado es igual a 'abrir wikipedia' abriremos wikipedia
   if (resultado.results[0][0].transcript.toLowerCase().trim() == "derecha") {
-    circleX += 5;
+    circleX += 20;
+  } else if (
+    resultado.results[0][0].transcript.toLowerCase().trim() == "izquierda"
+  ) {
+    circleX -= 20;
+  } else if (
+    resultado.results[0][0].transcript.toLowerCase().trim() == "arriba"
+  ) {
+    circleY -= 20;
+  } else if (
+    resultado.results[0][0].transcript.toLowerCase().trim() == "abajo"
+  ) {
+    circleY += 20;
   }
 };
 function setup() {
